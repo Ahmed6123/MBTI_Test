@@ -7,7 +7,10 @@ int main()
 	BinaryTree ob;
 	ob.makeTree("00");
 	system("pause");
+	cout << "u are mean";
+
 }
+
 //int main()
 //{
 //	Nodeptr tree = makeTree("Question 1");
