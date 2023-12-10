@@ -1,38 +1,13 @@
 #include<iostream>
+#include"Header.h"
 using namespace std;
-struct Tree
-{
-	string info;
-	Tree* left, * right;
-};
-typedef Tree* Nodeptr;
-Nodeptr makeTree(string Question)
-{
-	Nodeptr p = new Tree;
-	p->info = Question;
-	p->left = NULL;
-	p->right = NULL;
-	return p;
-}
-void setLeft(Nodeptr p, string Question)
-{
-	if (p == NULL)
-		cout << "Void Insertion";
-	else if (p->left != NULL)
-		cout << "Invalid Insertion";
-	else
-		p->left = makeTree(Question);
-}
-void setRight(Nodeptr p, string Question)
-{
-	if (p == NULL)
-		cout << "Void Insertion";
-	else if (p->right != NULL)
-		cout << "Invalid Insertion";
-	else
-		p->right = makeTree(Question);
-}
 
+int main()
+{
+	BinaryTree ob;
+	ob.makeTree("00");
+	system("pause");
+}
 //int main()
 //{
 //	Nodeptr tree = makeTree("Question 1");
