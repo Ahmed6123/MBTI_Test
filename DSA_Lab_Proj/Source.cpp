@@ -7,7 +7,6 @@ using namespace std;
 int main()
 {
 	setCustomWindowSize();
-
 	string energyQuestions[7] = //introvert/extrovert (I/E)
 	{
 		"Q1) When wanting to relax, do you prefer to spend time alone or with friends?\n\n1. Spending time alone\t\t2. Spending time with friends\n",
@@ -48,7 +47,7 @@ int main()
 		"Q6) When facing a deadline, do you tend to work steadily towards it, completing tasks systematically, or do you thrive on the last-minute rush of adrenaline?\n1. Work steadily towards it, completing tasks systematically\n2. Thrive on the last-minute rush of adrenaline",
 		"Q7) In a group setting, do you prefer a clear agenda and a structured plan, or do you enjoy the spontaneity and exploration of new ideas?\n1. Prefer to have a clear agenda and follow a structured plan\n2. Enjoy the spontaneity and exploration of new ideas"
 	};
-	string identityQuestions[7] = //assertive/turbulent (A/T)
+	string identityQuestions[7] = // assertive/turbulent (A/T)
 	{
 		"Q1) When facing challenges, do you usually remain calm and composed, or do you find yourself easily stressed and anxious?\n1. Remain calm and composed\n2. Easily stressed and anxious",
 		"Q2) In social situations, are you confident and self-assured, or do you tend to worry about how others perceive you?\n1. Confident and self-assured\n2. Worry about how others perceive you",
@@ -58,11 +57,25 @@ int main()
 		"Q6) In your daily life, are you more likely to stick to a well-defined plan and routine, or do you prefer spontaneity and adaptability?\n1. Stick to a well-defined plan and routine\n2. Prefer spontaneity and adaptability",
 		"Q7) When faced with uncertainty, do you stay optimistic and maintain a sense of control, or do you feel overwhelmed and uneasy about the unknown?\n1. Stay optimistic and maintain a sense of control\n2. Feel overwhelmed and uneasy about the unknown"
 	};
-
 	BinaryTree EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree;
-
-	Nodeptr EnergyTreeRoot = EnergyTree.makeTree(energyQuestions[0]);
+	Nodeptr EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot;
+	EnergyTreeRoot = EnergyTree.makeTree(energyQuestions[0]);
 	EnergyTree.setQuestionsHelper(EnergyTreeRoot, energyQuestions, 1);
 	EnergyTree.traverseTreeBasedOnInput(EnergyTreeRoot);
+	cout << EnergyTree.getLeft() << " " << EnergyTree.getRight() << endl;
+	EnergyTree.calculatePercentage(EnergyTree.getLeft(), EnergyTree.getRight());
 	system("pause");
+	system("cls");
+	MindTreeRoot = MindTree.makeTree(mindQuestions[0]);
+	MindTree.setQuestionsHelper(MindTreeRoot, mindQuestions, 1);
+	MindTree.traverseTreeBasedOnInput(MindTreeRoot);
+	cout << MindTree.getLeft() << " " << MindTree.getRight();
+	system("pause");
+	system("cls");
+	NatureTreeRoot = NatureTree.makeTree(natureQuestions[0]);
+	NatureTree.setQuestionsHelper(NatureTreeRoot, natureQuestions, 1);
+	NatureTree.traverseTreeBasedOnInput(NatureTreeRoot);
+	cout << NatureTree.getLeft() << " " << NatureTree.getRight();
+	system("pause");
+	system("cls");
 }
