@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include<Windows.h>
 using namespace std;
 
@@ -88,6 +88,18 @@ public:
 			}
 		}
 	}
+	void calculatePercentage(int leftCounter, int rightCounter)
+	{
+		int leftPercentage, rightPercentage;
+		leftPercentage = (leftCounter / 7) * 100;
+		rightPercentage = (rightCounter / 7) * 100; //▮
+		
+		for (int i = 0; i < (leftPercentage/2); i++)
+		{
+			cout << "#";
+		}
+	}
+
 };
 
 void setCustomWindowSize()
@@ -95,6 +107,5 @@ void setCustomWindowSize()
 	HWND console = GetConsoleWindow();
 	RECT ConsoleRect;
 	GetWindowRect(console, &ConsoleRect);
-
-	MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1280, 780, TRUE);
+	MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1280, 960, TRUE);
 }

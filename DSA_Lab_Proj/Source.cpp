@@ -58,8 +58,24 @@ int main()
 		"Q7) When faced with uncertainty, do you stay optimistic and maintain a sense of control, or do you feel overwhelmed and uneasy about the unknown?\n1. Stay optimistic and maintain a sense of control\n2. Feel overwhelmed and uneasy about the unknown"
 	};
 	BinaryTree EnergyTree,MindTree,NatureTree,TacticTree,IdentityTree;
-	Nodeptr EnergyTreeRoot = EnergyTree.makeTree(energyQuestions[0]);
+	Nodeptr EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot;
+	EnergyTreeRoot = EnergyTree.makeTree(energyQuestions[0]);
 	EnergyTree.setQuestionsHelper(EnergyTreeRoot, energyQuestions, 1);
 	EnergyTree.traverseTreeBasedOnInput(EnergyTreeRoot);
+	cout << EnergyTree.getLeft() << " " << EnergyTree.getRight()<<endl;
+	EnergyTree.calculatePercentage(EnergyTree.getLeft(), EnergyTree.getRight());
 	system("pause");
+	system("cls");
+	MindTreeRoot = MindTree.makeTree(mindQuestions[0]);
+	MindTree.setQuestionsHelper(MindTreeRoot, mindQuestions, 1);
+	MindTree.traverseTreeBasedOnInput(MindTreeRoot);
+	cout << MindTree.getLeft() << " " << MindTree.getRight();
+	system("pause");
+	system("cls");
+	NatureTreeRoot = NatureTree.makeTree(natureQuestions[0]);
+	NatureTree.setQuestionsHelper(NatureTreeRoot, natureQuestions, 1);
+	NatureTree.traverseTreeBasedOnInput(NatureTreeRoot);
+	cout << NatureTree.getLeft() << " " << NatureTree.getRight();
+	system("pause");
+	system("cls");
 }
