@@ -12,6 +12,8 @@ typedef Tree* Nodeptr;
 class BinaryTree 
 {
 private:
+	int introvertCounter = 0;
+	int extrovertCounter = 0;
 	string energyQuestions[7] = //introvert/extrovert (I/E)
 	{
 		"Q1) When wanting to relax, do you prefer to spend time alone or with friends?\n1. Spending time alone\n2. Spending time with friends",
@@ -93,13 +95,44 @@ public:
 
 	void setQuestionsHelper(Nodeptr p, string arr[], int index)
 	{
-		if (p == NULL || index >= 3)
+		if (p == NULL || index >= 7)
 			return;
 
 		setRight(p, arr[index]);
-		setQuestionsHelper(p->left, arr, index + 1); 
 		setQuestionsHelper(p->right, arr, index + 1);
 		setLeft(p, arr[index]);
+		setQuestionsHelper(p->left, arr, index + 1); 
 	}
+
+	void traverseTreeBasedOnInput(Nodeptr root)
+	{
+		Nodeptr current = root;
+		int choice;
+
+		while (current != NULL)
+		{
+			cout << current->data << "\n";
+			cout << "Enter your choice (1/2): ";
+			cin >> choice;
+
+			if (choice == 1)
+			{
+				current = current->left;
+				introvertCounter++;
+			}
+			else if (choice == 2)
+			{
+				current = current->right;
+				extrovertCounter++;
+			}
+			else
+			{
+				cout << "Invalid choice. Please enter 1 or 2.\n";
+			}
+		}
+		cout << extrovertCounter;
+
+	}
+
 
 };
