@@ -57,12 +57,12 @@ int main()
 		"Q6) In your daily life, are you more likely to stick to a well-defined plan and routine, or do you prefer spontaneity and adaptability?\n1. Stick to a well-defined plan and routine\n2. Prefer spontaneity and adaptability",
 		"Q7) When faced with uncertainty, do you stay optimistic and maintain a sense of control, or do you feel overwhelmed and uneasy about the unknown?\n1. Stay optimistic and maintain a sense of control\n2. Feel overwhelmed and uneasy about the unknown"
 	};
-	BinaryTree EnergyTree,MindTree,NatureTree,TacticTree,IdentityTree;
+	BinaryTree EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree;
 	Nodeptr EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot;
 	EnergyTreeRoot = EnergyTree.makeTree(energyQuestions[0]);
 	EnergyTree.setQuestionsHelper(EnergyTreeRoot, energyQuestions, 1);
 	EnergyTree.traverseTreeBasedOnInput(EnergyTreeRoot);
-	cout << EnergyTree.getLeft() << " " << EnergyTree.getRight()<<endl;
+	cout << EnergyTree.getLeft() << " " << EnergyTree.getRight() << endl;
 	EnergyTree.calculatePercentage(EnergyTree.getLeft(), EnergyTree.getRight());
 	system("pause");
 	system("cls");

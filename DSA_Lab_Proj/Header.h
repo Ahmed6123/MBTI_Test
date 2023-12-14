@@ -10,7 +10,7 @@ struct Tree
 };
 typedef Tree* Nodeptr;
 
-class BinaryTree 
+class BinaryTree
 {
 private:
 	int leftCounter = 0;
@@ -58,7 +58,7 @@ public:
 		setRight(p, arr[index]);
 		setQuestionsHelper(p->right, arr, index + 1);
 		setLeft(p, arr[index]);
-		setQuestionsHelper(p->left, arr, index + 1); 
+		setQuestionsHelper(p->left, arr, index + 1);
 	}
 	void traverseTreeBasedOnInput(Nodeptr root)
 	{
@@ -68,7 +68,7 @@ public:
 		while (current != NULL)
 		{
 			cout << current->data << "\n";
-			cout <<"Enter your choice (1/2): ";
+			cout << "Enter your choice (1/2): ";
 			cin >> choice;
 			cout << endl;
 
@@ -93,8 +93,8 @@ public:
 		int leftPercentage, rightPercentage;
 		leftPercentage = (leftCounter / 7) * 100;
 		rightPercentage = (rightCounter / 7) * 100; //▮
-		
-		for (int i = 0; i < (leftPercentage/2); i++)
+
+		for (int i = 0; i < (leftPercentage / 2); i++)
 		{
 			cout << "#";
 		}
