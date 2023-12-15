@@ -1,7 +1,7 @@
 #include<iostream>
 #include<Windows.h>
 #include<iomanip>
-#include"Header.h"
+#include"Fucntions.h"
 using namespace std;
 
 int main()
@@ -58,8 +58,8 @@ int main()
 	BinaryTree EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree;
 	Nodeptr EnergyTreeRoot = nullptr, MindTreeRoot = nullptr, NatureTreeRoot = nullptr, TacticTreeRoot = nullptr, IdentityTreeRoot = nullptr;
 
-	BinaryTree TreeArray[5] = { EnergyTree,MindTree,NatureTree,TacticTree,IdentityTree };	
-	Nodeptr RootsArray[5] = { EnergyTreeRoot ,MindTreeRoot,NatureTreeRoot,TacticTreeRoot,IdentityTreeRoot };
+	BinaryTree TreeArray[5] = { EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree };	
+	Nodeptr RootsArray[5] = { EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot };
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -68,4 +68,10 @@ int main()
 		TreeArray[i].traverseTreeBasedOnInput(RootsArray[i]);
 		system("cls");
 	}
+	for (int i = 0; i < 5; i++)
+	{
+		TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight());
+		cout << endl;
+	}
+	system("pause");
 }
