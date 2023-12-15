@@ -7,7 +7,8 @@ using namespace std;
 int main()
 {
 	setCustomWindowSize();
-	string Question[5][7] = {
+	string Question[5][7] = 
+	{
 		{
 			"Q1) When wanting to relax, do you prefer to spend time alone or with friends?\n\n1. Spending time alone\t\t2. Spending time with friends\n",
 			"Q2) Do you prefer small, intimate gatherings or large, fancy parties?\n\n1. Small, intimate gatherings\t\t2. Large, fancy parties\n",

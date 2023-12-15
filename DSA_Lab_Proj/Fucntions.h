@@ -84,19 +84,24 @@ public:
 			}
 			else
 			{
-				cout << "Invalid choice. Please enter 1 or 2.\n";
+				cout << "Invalid choice; Please enter 1 or 2.\n";
 			}
 		}
 	}
 	void calculatePercentage(int leftCounter, int rightCounter)
 	{
-		int leftPercentage, rightPercentage;
+		int i, j;
+		float leftPercentage, rightPercentage;
 		leftPercentage = (leftCounter / 7) * 100;
 		rightPercentage = (rightCounter / 7) * 100; //▮
-
-		for (int i = 0; i < (leftPercentage / 2); i++)
+		
+		for (i = 0; i < (leftPercentage / 2); i++)
 		{
 			cout << "#";
+		}
+		for (j = i + 1; j < 51; j++)
+		{
+			cout << "-";
 		}
 	}
 
