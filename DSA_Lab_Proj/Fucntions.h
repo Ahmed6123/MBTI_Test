@@ -16,11 +16,11 @@ private:
 	int leftCounter = 0;
 	int rightCounter = 0;
 public:
-	int getLeft()
+	float getLeft()
 	{
 		return leftCounter;
 	}
-	int getRight()
+	float getRight()
 	{
 		return rightCounter;
 	}
@@ -88,13 +88,12 @@ public:
 			}
 		}
 	}
-	void calculatePercentage(int leftCounter, int rightCounter)
+	void calculatePercentage(float leftCounter, float rightCounter)
 	{
 		int i, j;
 		float leftPercentage, rightPercentage;
 		leftPercentage = (leftCounter / 7) * 100;
 		rightPercentage = (rightCounter / 7) * 100; //▮
-		
 		for (i = 0; i < (leftPercentage / 2); i++)
 		{
 			cout << "#";
