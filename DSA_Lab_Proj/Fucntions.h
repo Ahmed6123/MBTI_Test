@@ -88,19 +88,31 @@ public:
 			}
 		}
 	}
-	void calculatePercentage(float leftCounter, float rightCounter)
+	void calculatePercentage(float leftCounter, float rightCounter , char attribute[])
 	{
+		char Load = 177;
 		int i, j;
 		float leftPercentage, rightPercentage;
 		leftPercentage = (leftCounter / 7) * 100;
-		rightPercentage = (rightCounter / 7) * 100; //▮
+		rightPercentage = (rightCounter / 7) * 100;
+
+		cout << " " << attribute[0] << " ";					//▮
 		for (i = 0; i < (leftPercentage / 2); i++)
 		{
-			cout << "#";
+			cout << "\033[1;20m" << char(219) << "\033[0m";
 		}
 		for (j = i + 1; j < 51; j++)
 		{
-			cout << "-";
+			cout << "\033[1;35m" << char(219) << "\033[0m";
+		}
+		cout << " " << attribute[1] << "  ";
+		if (leftPercentage > rightPercentage)
+		{
+			cout << "[" << (int)leftPercentage << " %]" << endl;
+		}
+		else
+		{
+			cout << "[" << (int)rightPercentage << " %]" << endl;
 		}
 	}
 	void printAboutTheTest()
@@ -112,7 +124,6 @@ public:
 		cout << "\n\n - Tactics -\nThis aspect reflects our approach to work, planning and decision-making:\n\nJudging individuals are decisive, thorough and highly organized. They value clarity, predictability and closure, preferring structure and planning to spontaneity.\n\nProspecting individuals are very good at improvising and spotting opportunities. They tend to be flexible, relaxed nonconformists who prefer keeping their options open." << endl;
 		cout << "\n\n - Identity -\nFinally, the Identity aspect underpins all others, showing how confident we are in our abilities and decisions\n\nAssertive (-A) individuals are self-assured, even-tempered and resistant to stress. They refuse to worry too much and do not push themselves too hard when it comes to achieving goals.\n\nTurbulent (-T) individuals are self-conscious and sensitive to stress. They are likely to experience a wide range of emotions and to be success-driven, perfectionistic and eager to improve." << endl;
 	}
-
 };
 
 void setCustomWindowSize()
@@ -122,3 +133,8 @@ void setCustomWindowSize()
 	GetWindowRect(console, &ConsoleRect);
 	MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 1280, 960, TRUE);
 }
+
+//I ##################################---------------- N     [57 %]
+//T ######################---------------------------- F	 [57 %]
+//J ######################---------------------------- P	 [57 %]
+//A ########------------------------------------------ T	 [85 %]

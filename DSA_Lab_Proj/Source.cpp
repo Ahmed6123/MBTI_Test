@@ -7,6 +7,8 @@ using namespace std;
 int main()
 {
 	setCustomWindowSize();
+	string Quality[5] = { "Introversion (I) / Extroversion (E)", "Sensing (S) / Intuition (N)", "Thinking (T) / Feeling (F)", "Judging (J) / Perceiving (P)", "Assertive (-A) / Turbulent (-T)" };
+	char Attribute[5][2] = { {'I', 'E'}, {'S', 'N'}, {'T', 'F'}, {'J', 'P'}, {'-A', '-T'} };	
 	string Question[5][7] = 
 	{
 		{
@@ -55,7 +57,6 @@ int main()
 			"35. When faced with uncertainty, do you stay optimistic and maintain a sense of control, or do you feel overwhelmed and uneasy about the unknown?\n1. Stay optimistic and maintain a sense of control\n2. Feel overwhelmed and uneasy about the unknown"
 		}
 	};
-
 	BinaryTree EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree;
 	Nodeptr EnergyTreeRoot = nullptr, MindTreeRoot = nullptr, NatureTreeRoot = nullptr, TacticTreeRoot = nullptr, IdentityTreeRoot = nullptr;
 
@@ -74,7 +75,7 @@ int main()
 		cout << "5. Exit" << endl;
 		cout << "Choice: ";
 		cin >> choice;
-
+		system("cls");
 		switch (choice)
 		{
 		case 1:
@@ -90,7 +91,7 @@ int main()
 		case 2:
 			for (int i = 0; i < 5; i++)
 			{
-				TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight());
+				TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
 				cout << endl;
 			}
 			system("pause");
