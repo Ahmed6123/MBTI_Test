@@ -91,6 +91,15 @@ int main()
 		case 2:
 			for (int i = 0; i < 5; i++)
 			{
+				if (i == 4)
+				{
+					cout << "-";
+				}
+				cout<<TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
+			}
+			cout<<"\n\n\n";
+			for (int i = 0; i < 5; i++)
+			{
 				TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
 				cout << endl;
 			}
