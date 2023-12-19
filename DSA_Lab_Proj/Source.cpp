@@ -62,7 +62,7 @@ int main()
 
 	BinaryTree TreeArray[5] = { EnergyTree, MindTree, NatureTree, TacticTree, IdentityTree };	
 	Nodeptr RootsArray[5] = { EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot };
-
+	bool testTaken = false;
 	int choice;
 	do
 	{
@@ -86,22 +86,32 @@ int main()
 				TreeArray[i].traverseTreeBasedOnInput(RootsArray[i]);
 				system("cls");
 			}
+			testTaken = true;
 			break;
 			
 		case 2:
-			for (int i = 0; i < 5; i++)
+			if(!testTaken)
 			{
-				if (i == 4)
-				{
-					cout << "-";
-				}
-				cout<<TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
+				cout << "You have not taken the test yet." << endl;
+				system("pause");
+				break;
 			}
-			cout<<"\n\n\n";
-			for (int i = 0; i < 5; i++)
+			else
 			{
-				TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
-				cout << endl;
+				for (int i = 0; i < 5; i++)
+				{
+					if (i == 4)
+					{
+						cout << "-";
+					}
+					cout << TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
+				}
+				cout << "\n\n\n";
+				for (int i = 0; i < 5; i++)
+				{
+					TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
+					cout << endl;
+				}
 			}
 			system("pause");
 			break;
@@ -125,6 +135,5 @@ int main()
 			break;
 		}
 	} while (choice != 5);
-
-	return 0;
+  return 0;
 }

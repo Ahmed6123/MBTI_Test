@@ -16,22 +16,6 @@ private:
 	int leftCounter = 0;
 	int rightCounter = 0;
 public:
-	float getLeft()
-	{
-		return leftCounter;
-	}
-	float getRight()
-	{
-		return rightCounter;
-	}
-	Nodeptr makeTree(string Question)
-	{
-		Nodeptr p = new Tree;
-		p->data = Question;
-		p->left = NULL;
-		p->right = NULL;
-		return p;
-	}
 	void setLeft(Nodeptr p, string Question)
 	{
 		if (p == NULL)
@@ -49,6 +33,22 @@ public:
 			cout << "Invalid Insertion";
 		else
 			p->right = makeTree(Question);
+	}
+	float getLeft()
+	{
+		return leftCounter;
+	}
+	float getRight()
+	{
+		return rightCounter;
+	}
+	Nodeptr makeTree(string Question)
+	{
+		Nodeptr p = new Tree;
+		p->data = Question;
+		p->left = NULL;
+		p->right = NULL;
+		return p;
 	}
 	void setQuestionsHelper(Nodeptr p, string arr[], int index)
 	{
