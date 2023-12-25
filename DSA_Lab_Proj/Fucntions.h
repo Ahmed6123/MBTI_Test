@@ -153,3 +153,82 @@ void setCustomWindowSize()
 //T ######################---------------------------- F	 [57 %]
 //J ######################---------------------------- P	 [57 %]
 //A ########------------------------------------------ T	 [85 %]
+
+void matchPersonalityType()
+{
+	//idea: a quirky note can be added.
+	//personalityType needs to be modified.
+	//current format: quote, desc, ymk
+
+	switch (personalityType)
+	{
+	case 'ISTJ':
+		cout << "“I’d be more frightened by not using whatever abilities I’d been given. I’d be more frightened by procrastination and laziness.”\n\t\t\t - Denzel Washington" << endl;
+		cout << "\n\tThe Logistician: \nOrder and efficiency are your middle names. Like a well-oiled machine, you navigate life with structure, meticulously ticking tasks off your list. Rules and traditions hold firm ground in your world, ensuring stability and a sense of security. (Think Captain America meticulously following orders while keeping morals in check.)" << endl; 
+		cout << "\nLogisticians You May Know:\n\t o George Washington\n\t o Natalie Portman\n\t o Hermione Granger - Harry Potter" << endl;
+		break;
+
+	case 'ISFJ':
+		cout << "“Love only grows by sharing. You can only have more for yourself by giving it away to others.”\n\t\t\t - Brian Tracy" << endl;
+		cout << "\n\tThe Defender: \nLoyalty and compassion are your superpowers. You're the rock in a storm, always there to lend a hand and offer a warm shoulder. Family and community hold deep meaning, and you tirelessly uphold traditions that bind people together. (Think Samwise Gamgee, steadfastly supporting Frodo on his quest.)" << endl;
+		cout << "\nDefenders You May Know:\n\t o Queen Elizabeth II\n\t o Captain America\n\t o Anne Hathaway" << endl;
+		break;
+
+	case 'INFJ':
+		cout << "“Treat people as if they were what they ought to be and you help them to become what they are capable of being.”\n\t\t\t - Johann Wolfgang Von Goethe" << endl;
+		cout << "\n\tThe Advocate: \nIdealism burns bright within you. You see the potential for good in everyone and every situation, and you champion causes that make the world a better place. Driven by empathy and a deep understanding of human nature, you inspire others to reach their fullest potential. (Think Mother Teresa advocating for the less fortunate with unwavering conviction.)" << endl;
+		cout << "\nAdvocates You May Know:\n\t o Nelson Mandela\n\t o Lady Gaga\n\t o Rose Bukater - Titanic" << endl;
+		break; 
+
+	case 'INTJ':
+		cout << "“Thought constitutes the greatness of man. Man is a reed, the feeblest thing in nature, but he is a thinking reed.”\n\t\t\t - Blaise Pascal" << endl;
+		cout << "\n\tThe Architect: \nYour mind is a futuristic chessboard, where strategies unfurl and innovations materialize. You see the big picture, meticulously constructing blueprints for the future with logic and precision. A natural leader, you steer the course towards progress, leaving a lasting impact on the world. (Think Darth Vader, albeit with a vision for a better galaxy, meticulously planning his next move.)" << endl;
+		cout << "\nArchitects You May Know:\n\t o Michelle Obama\n\t o Elon Musk\n\t o Gandalf The Grey - LOTR" << endl;
+		break;
+
+	case 'ISTP':
+		cout << "“I wanted to live the life, a different life. I didn’t want to go to the same place every day and see the same people and do the same job. I wanted interesting challenges.”\n\t\t\t - Harrison Ford" << endl;
+		cout << "\n\tThe Virtuoso: \nIngenuity dances in your fingertips. You're the MacGyver of your circle, transforming everyday objects into ingenious solutions. Practical and resourceful, you thrive on challenges, wielding your sharp mind and nimble hands to conquer any obstacle. (Think MacGyver crafting a makeshift bomb defuser from paper clips and chewing gum.)" << endl;
+		cout << "\nVirtuosos You May Know:\n\t o Tom Cruise\n\t o James Bond\n\t o John McClane - Die Hard" << endl;
+		break;
+
+	case 'ISFP':
+		cout << "“I change during the course of a day. I wake and I’m one person, and when I go to sleep I know for certain I’m somebody else.”\n\t\t\t - Bob Dylan" << endl;
+		cout << "\n\tThe Adventurer: \nSpontaneity is your compass, freedom your fuel. You chase sunsets and embrace the unknown, seeking unique experiences that paint your life with vibrant colors. Your artistic soul expresses itself in everything you do, leaving a trail of beauty and inspiration in your wake. (Think Audrey Hepburn radiating elegance and spirit, living life to the fullest.)" << endl;
+		cout << "\nAdventurers You May Know:\n\t o Lana Del Ray\n\t o Britney Spears\n\t o Michael Jackson" << endl;
+		break;
+	
+	case 'INFP':
+		cout << "“All that is gold does not glitter; not all those who wander are lost; the old that is strong does not wither; deep roots are not reached by the frost.”\n\t\t\t - J.R.R.Tolkein" << endl;
+		cout << "\n\tThe Mediator: \nHarmony is your life's symphony. You navigate the world with a gentle spirit, seeking understanding and bridging divides. Creative expression flows through your veins, whether through art, music, or simply your gentle empathy that binds people together. (Think Vincent van Gogh painting his Starry Night, seeking beauty and meaning in the world.)" << endl;
+		cout << "\nMediators You May Know:\n\t o William Shakespeare\n\t o Johnny Depp\n\t o Frodo Baggins - LOTR" << endl;
+		break;
+
+	case 'INTP':
+		cout << "The important thing is not to stop questioning. Curiosity has its own reason for existence.\n\t\t\t - Albert Einstein" << endl;
+		cout << "\n\tThe Logician: \nYour mind is a labyrinth of puzzles, where theories dance and equations hold meaning. You dissect ideas with razor-sharp analysis, unraveling the mysteries of the universe one logical step at a time. While quiet on the surface, your thoughts spark like fireworks, illuminating new paths for those around you. (Think Sherlock Holmes meticulously unraveling a mystery, fueled by the thrill of intellectual discovery.)" << endl;
+		cout << "\nLogicians You May Know:\n\t o Bill Gates\n\t o Isaac Newton\n\t o Bruce Banner - Avengers" << endl;
+		break;
+
+	case 'ESTP':
+
+	case 'ESFP':
+
+	case 'ENFP':
+
+	case 'ENTP':
+
+	case 'ESTJ':
+
+	case 'ESFJ':
+
+	case 'ENFJ':
+
+	case 'ENTJ':
+
+	default:
+		cerr << "Error: Unexpected personality type encountered." << endl;
+	}
+
+	cout << "\nLearn more about your type and traits in our Personality Types Section!" << endl;
+}
