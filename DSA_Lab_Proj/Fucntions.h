@@ -129,6 +129,7 @@ public:
 		}
 		return personalityType;
 	}
+
 	void printAboutTheTest()
 	{
 		cout << "The MBTI® assessment is designed to help people identify and gain some understanding around how they take in information and make decisions, the patterns of perception and judgment, as seen in normal, healthy behavior." << endl << "\nDescribing the five personality aspects that, when combined, define the personality type: Energy, Mind, Nature, Tactics and Identity, each seen as a two-sided continuum." << endl;

@@ -92,12 +92,13 @@ int main()
 		case 2:
 			if(!testTaken)
 			{
-				cout << "You have not taken the test yet." << endl;
+				cout << "Please attempt the test." << endl;
 				system("pause");
 				break;
 			}
 			else
 			{
+				cout << "You are an '";
 				for (int i = 0; i < 5; i++)
 				{
 					if (i == 4)
@@ -106,7 +107,11 @@ int main()
 					}
 					cout << TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
 				}
-				cout << "\n\n\n";
+				cout << "'!\n\n\n";
+
+				//character
+				//description
+
 				for (int i = 0; i < 5; i++)
 				{
 					TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
