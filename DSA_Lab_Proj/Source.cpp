@@ -3,7 +3,6 @@
 #include <iomanip>
 #include "Fucntions.h"
 using namespace std;
-
 int main()
 {
 	setCustomWindowSize();
@@ -65,6 +64,7 @@ int main()
 	bool testTaken = false;
 	int choice;
 
+
 	do
 	{
 		system("cls");
@@ -84,10 +84,12 @@ int main()
 			for (int i = 0; i < 5; i++)
 			{
 				RootsArray[i] = TreeArray[i].makeTree(Question[i][0]);
+				TreeArray[i].setCounters();
 				TreeArray[i].setQuestionsHelper(RootsArray[i], Question[i], 1);
 				TreeArray[i].traverseTreeBasedOnInput(RootsArray[i]);
 				system("cls");
 			}
+			printResult(TreeArray, Attribute);
 			testTaken = true;
 			break;
 			
@@ -100,27 +102,8 @@ int main()
 			}
 			else
 			{
-				cout << "You are an '";
-				for (int i = 0; i < 5; i++)
-				{
-					if (i == 4)
-					{
-						cout << "-";
-					}
-					cout << TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
-				}
-				cout << "'!\n\n\n";
-
-				//character
-				//description
-
-				for (int i = 0; i < 5; i++)
-				{
-					TreeArray[i].calculatePercentage(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
-					cout << endl;
-				}
+				printResult(TreeArray, Attribute);
 			}
-			system("pause");
 			break;
 
 		case 3:
