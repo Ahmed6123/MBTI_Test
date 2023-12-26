@@ -64,18 +64,20 @@ int main()
 	Nodeptr RootsArray[5] = { EnergyTreeRoot, MindTreeRoot, NatureTreeRoot, TacticTreeRoot, IdentityTreeRoot };
 	bool testTaken = false;
 	int choice;
+
 	do
 	{
 		system("cls");
 		cout << "- Welcome to the Myers-Briggs Type Indicator! -" << endl;
-		cout << "1. Take The Test" << endl;
-		cout << "2. View Results" << endl;
-		cout << "3. About The Test" << endl;
-		cout << "4. Personality Types" << endl;
-		cout << "5. Exit" << endl;
+		cout << "[1]: Take The Test" << endl;
+		cout << "[2]: View Results" << endl;
+		cout << "[3]: About The Test" << endl;
+		cout << "[4]: Personality Types" << endl;
+		cout << "[5]: Exit" << endl;
 		cout << "Choice: ";
 		cin >> choice;
 		system("cls");
+
 		switch (choice)
 		{
 		case 1:
@@ -140,5 +142,6 @@ int main()
 			break;
 		}
 	} while (choice != 5);
-  return 0;
+
+	return 0;
 }
