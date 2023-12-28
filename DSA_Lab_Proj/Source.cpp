@@ -1,7 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <iomanip>
-#include "Fucntions.h"
+#include "Functions.h"
+#include "Functions2.h"
 using namespace std;
 int main()
 {

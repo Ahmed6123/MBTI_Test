@@ -1,149 +1,3 @@
-ï»¿#include<iostream>
-#include<Windows.h>
-using namespace std;
-
-struct Tree
-{
-	string data;
-	Tree* left, * right;
-	typedef Tree* Nodeptr;
-};
-typedef Tree* Nodeptr;
-
-class BinaryTree
-{
-private:
-	int leftCounter = 0;
-	int rightCounter = 0;
-public:
-	void setCounters()
-	{
-		leftCounter = 0;
-		rightCounter = 0;
-	}
-	void setLeft(Nodeptr p, string Question)
-	{
-		if (p == NULL)
-			cout << "Void Insertion";
-		else if (p->left != NULL)
-			cout << "Invalid Insertion";
-		else
-			p->left = makeTree(Question);
-	}
-	void setRight(Nodeptr p, string Question)
-	{
-		if (p == NULL)
-			cout << "Void Insertion";
-		else if (p->right != NULL)
-			cout << "Invalid Insertion";
-		else
-			p->right = makeTree(Question);
-	}
-	float getLeft()
-	{
-		return leftCounter;
-	}
-	float getRight()
-	{
-		return rightCounter;
-	}
-	Nodeptr makeTree(string Question)
-	{
-		Nodeptr p = new Tree;
-		p->data = Question;
-		p->left = NULL;
-		p->right = NULL;
-		return p;
-	}
-	void setQuestionsHelper(Nodeptr p, string arr[], int index)
-	{
-		if (p == NULL || index >= 7)
-			return;
-
-		setRight(p, arr[index]);
-		setQuestionsHelper(p->right, arr, index + 1);
-		setLeft(p, arr[index]);
-		setQuestionsHelper(p->left, arr, index + 1);
-	}
-	void traverseTreeBasedOnInput(Nodeptr root)
-	{
-		Nodeptr current = root;
-		int choice;
-
-		while (current != NULL)
-		{
-			cout << current->data << "\n";
-			cout << "Enter your choice (1/2): ";
-			cin >> choice;
-			cout << endl;
-
-			if (choice == 1)
-			{
-				current = current->left;
-				leftCounter++;
-			}
-			else if (choice == 2)
-			{
-				current = current->right;
-				rightCounter++;
-			}
-			else
-			{
-				cout << "Invalid choice; Please enter 1 or 2.\n";
-			}
-		}
-	}
-	void displayProgressBar(float leftCounter, float rightCounter , char attribute[])
-	{
-		char Load = 177;
-		int i, j;
-		float leftPercentage, rightPercentage;
-		leftPercentage = (leftCounter / 7) * 100;
-		rightPercentage = (rightCounter / 7) * 100;
-		cout << " " << attribute[0] << " ";
-		for (i = 0; i < (leftPercentage / 2); i++)
-		{
-			cout << "\033[1;20m" << char(219) << "\033[0m";
-		}
-		for (j = i + 1; j < 51; j++)
-		{
-			cout << "\033[1;35m" << char(219) << "\033[0m";
-		}
-		cout << " " << attribute[1] << "  ";
-		if (leftPercentage > rightPercentage)
-		{
-			cout << "[" << (int)leftPercentage << " %]" << endl;
-		}
-		else
-		{
-			cout << "[" << (int)rightPercentage << " %]" << endl;
-		}
-	}
-	char getPersonalityType(float leftCounter, float rightCounter , char attribute[])
-	{
-		char personalityType;
-		if (leftCounter > rightCounter)
-		{
-			personalityType = attribute[0];
-		}
-		else
-		{
-			personalityType = attribute[1];
-		}
-		return personalityType;
-	}
-	void printAboutTheTest()
-	{
-		cout << "The MBTIÂ® assessment is designed to help people identify and gain some understanding around how they take in information and make decisions, the patterns of perception and judgment, as seen in normal, healthy behavior." << endl << "\nDescribing the five personality aspects that, when combined, define the personality type: Energy, Mind, Nature, Tactics and Identity, each seen as a two-sided continuum." << endl;
-		cout << "\n\n - Energy -\nThis aspect shows how we interact with our surroundings:\n\n Introverted individuals prefer solitary activities and get exhausted by social interaction. They tend to be quite sensitive to external stimulation (e.g. sound, sight or smell) in general.\n\nExtraverted individuals prefer group activities and get energized by social interaction. They tend to be more enthusiastic and more easily excited than Introverts." << endl;
-		cout << "\n\n - Mind -\nThe second aspect determines how we see the world and process information:\n\n Observant individuals are highly practical, pragmatic and down-to-earth. They tend to have strong habits and focus on what is happening or has already happened.\n\nIntuitive individuals are very imaginative, open-minded and curious. They prefer novelty over stability and focus on hidden meanings and future possibilities." << endl;
-		cout << "\n\n - Nature -\nThis aspect determines how we make decisions and cope with emotions:\n\nThinking individuals focus on objectivity and rationality, prioritizing logic over emotions. They tend to hide their feelings and see efficiency as more important than cooperation.\n\nFeeling individuals are sensitive and emotionally expressive. They are more empathic and less competitive than Thinking types, and focus on social harmony and cooperation." << endl;
-		cout << "\n\n - Tactics -\nThis aspect reflects our approach to work, planning and decision-making:\n\nJudging individuals are decisive, thorough and highly organized. They value clarity, predictability and closure, preferring structure and planning to spontaneity.\n\nProspecting individuals are very good at improvising and spotting opportunities. They tend to be flexible, relaxed nonconformists who prefer keeping their options open." << endl;
-		cout << "\n\n - Identity -\nFinally, the Identity aspect underpins all others, showing how confident we are in our abilities and decisions\n\nAssertive (-A) individuals are self-assured, even-tempered and resistant to stress. They refuse to worry too much and do not push themselves too hard when it comes to achieving goals.\n\nTurbulent (-T) individuals are self-conscious and sensitive to stress. They are likely to experience a wide range of emotions and to be success-driven, perfectionistic and eager to improve." << endl;
-	}
-	friend void printResult(BinaryTree TreeArray[] , char Attribute[5][2]);
-};
-
 void setCustomWindowSize()
 {
 	HWND console = GetConsoleWindow();
@@ -198,7 +52,7 @@ void matchPersonalityType(string personalityType)
 	{
 		cout << "\"I change during the course of a day. I wake and I\'m one person, and when I go to sleep I know for certain I\'m somebody else.\"\n\t\t\t - Bob Dylan" << endl;
 		cout << "\n\tThe Adventurer: \nSpontaneity is your compass, freedom your fuel. You chase sunsets and embrace the unknown, seeking unique experiences that paint your life with vibrant colors. Your artistic soul expresses itself in everything you do, leaving a trail of beauty and inspiration in your wake. (Think Audrey Hepburn radiating elegance and spirit, living life to the fullest.)" << endl;
-		cout << "\nDid you know?\n\t - Adventurers want to live in a world where they â€“ and everyone else â€“ have the freedom to live as they see fit, without judgment." << endl;
+		cout << "\nDid you know?\n\t - Adventurers want to live in a world where they – and everyone else – have the freedom to live as they see fit, without judgment." << endl;
 		cout << "\nAdventurers You May Know:\n\t o Lana Del Ray\n\t o Britney Spears\n\t o Michael Jackson" << endl;
 	}
 	else if (personalityType == "INFP")
@@ -233,7 +87,7 @@ void matchPersonalityType(string personalityType)
 	}
 	else if (personalityType == "ENFP")
 	{
-		cout << "\"It doesn\'t interest me what you do for a living. I want to know what you ache for â€“ and if you dare to dream of meeting your heart\'s longing.\"\n\t\t\t - Oriah Mountain Dreamer" << endl;
+		cout << "\"It doesn\'t interest me what you do for a living. I want to know what you ache for – and if you dare to dream of meeting your heart\'s longing.\"\n\t\t\t - Oriah Mountain Dreamer" << endl;
 		cout << "\n\tThe Campaigner: Possibilities dance like fireflies in your eyes. You're an enthusiast of life, championing new ideas and inspiring others to embrace their dreams. With an infectious optimism and boundless creativity, you paint the world with bright colors and spark revolutions of the heart. (Think Robin Williams spreading laughter and inspiration, igniting passion in those around him.)" << endl;
 		cout << "\nDid you know?\n\t - Campaigners are independent and creative, always on the lookout for the magic and meaning in everyday life." << endl;
 		cout << "\nCampaigners You May Know:\n\t o Spider Man\n\t o Willy Wonka\n\t o Ellen DeGeneres" << endl;
@@ -267,7 +121,7 @@ void matchPersonalityType(string personalityType)
 	{
 		cout << "\"When the whole world is silent, even one voice becomes powerful.\"\n\t\t\t - Malala Yousafzai." << endl;
 		cout << "\n\t The Protagonist: Inspiration lives in your eyes, charisma flows in your words. You see the potential within everyone and dedicate yourself to guiding them towards their dreams. With unwavering enthusiasm and boundless faith in humanity, you rally others to make the world a better place, leaving a legacy of hope and progress in your wake. (Think Nelson Mandela motivating a nation, uniting hearts and minds toward a shared vision.)" << endl;
-		cout << "\nDid you know?\n\t - Changing people\'s minds is no easy task â€“ but if anyone can do it, it\'s Protagonists." << endl;
+		cout << "\nDid you know?\n\t - Changing people\'s minds is no easy task – but if anyone can do it, it\'s Protagonists." << endl;
 		cout << "\n You May Know:\n\t o Barack Obama\n\t o Oprah Winfrey\n\t o Jennifer Lawrence" << endl;
 
 	}
@@ -298,8 +152,8 @@ void printResult(BinaryTree TreeArray[5], char Attribute[5][2])
 		}
 		attr = TreeArray[i].getPersonalityType(TreeArray[i].getLeft(), TreeArray[i].getRight(), Attribute[i]);
 		cout << attr;
-		if(i!=4)
-		DescriptionID += attr;
+		if (i != 4)
+			DescriptionID += attr;
 	}
 	cout << "'!\n\n\n";
 
@@ -311,9 +165,3 @@ void printResult(BinaryTree TreeArray[5], char Attribute[5][2])
 	matchPersonalityType(DescriptionID);
 	system("pause");
 }
-
-//I ##################################---------------- N     [57 %]
-//T ######################---------------------------- F	 [57 %]
-//J ######################---------------------------- P	 [57 %]
-//A ########------------------------------------------ T	 [85 %]
-
