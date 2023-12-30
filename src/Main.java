@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args)
     {
         setCustomWindowSize();
@@ -69,7 +70,7 @@ public class Main {
 
         do
         {
-            //Add clear screen
+            clearScreen();
             System.out.println("- Welcome to the Myers-Briggs Type Indicator! -");
             System.out.println("[1]: Take The Test");
             System.out.println("[2]: View Results");
@@ -80,7 +81,8 @@ public class Main {
 
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
-            //Add clear screen
+            clearScreen();
+
             switch (choice)
             {
                 case 1:
@@ -99,7 +101,7 @@ public class Main {
                     if (!testTaken)
                     {
                         System.out.println("Please attempt the test.");
-                        pause();
+                        systemPause();
                         break;
                     }
                     else
@@ -110,7 +112,7 @@ public class Main {
 
                 case 3:
                     energyTree.printAboutTheTest();
-                    //Add a system pause
+                    systemPause();
                     break;
 
                 case 4:
@@ -123,23 +125,23 @@ public class Main {
 
                 default:
                     System.out.println("Invalid choice; Please enter a valid option.");
-                    //Add a system pause
+                    systemPause();
                     break;
             }
         } while (choice != 5);
     }
 
-    private static void setCustomWindowSize() {
-        // Implement your custom window size logic here
-    }
-
     private static void clearScreen()
     {
-        // Implement your clear screen logic here
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
-    private static void pause()
+    private static void systemPause()
     {
-        // Implement your pause logic here
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Press Enter to Continue..")
+        scanner.nextLine();
+        // Waits for the user to press Enter
     }
 }

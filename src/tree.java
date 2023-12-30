@@ -208,35 +208,60 @@ class BinaryTree
         }
         else if (personalityType.equals("ESTP"))
         {
-            // Similar code for ESTP
+            System.out.println("\"Life is either a daring adventure or nothing at all.\"\n\t\t\t - Helen Keller");
+            System.out.println("\n\tThe Entrepreneur: \nThrill and action course through your veins. You crave challenges and dive headfirst into every adventure, always pushing boundaries and defying expectations. With a natural charisma and an infectious energy, you rally others to join your pursuits, leaving a trail of excitement and innovation in your wake. (Think Tony Stark building his Iron Man suit, energized by the challenge and driven by ambition.)");
+            System.out.println("\nDid you know?\n\t - Sometimes Entrepreneurs\' instantaneous observation and action is just what\'s required, as in some corporate environments, and especially in emergencies.");
+            System.out.println("\nEntrepreneurs You May Know:\n\t o Samuel L. Jackson\n\t o Ernest Hemingway\n\t o Ant-Man - Avengers");
         }
         else if (personalityType.equals("ESFP"))
         {
-            // Similar code for ESFP
+            System.out.println("\"Live for each second without hesitation.\"\n\t\t\t - Elton John");
+            System.out.println("\n\tThe Entertainer: \nLife is your stage, and you're the star player. With infectious enthusiasm and boundless energy, you light up every room with your charisma and charm. Laughter and fun follow you wherever you go, as you weave stories, connect hearts, and bring joy to the world around you. (Think Jim Carrey, making everyone laugh with his comedic antics and captivating stage presence.)");
+            System.out.println("\nDid you know?\n\t - There\'s nothing that makes Entertainers feel quite as unhappy as realizing that they are boxed in by circumstance, unable to join their friends.");
+            System.out.println("\nEntertainers You May Know:\n\t o Captain Marvel\n\t o Jamie Foxx\n\t o Jack Dawson - Titanic");
         }
         else if (personalityType.equals("ENFP"))
         {
-            // Similar code for ENFP
+            System.out.println("\"It doesn\'t interest me what you do for a living. I want to know what you ache for – and if you dare to dream of meeting your heart\'s longing.\"\n\t\t\t - Oriah Mountain Dreamer");
+            System.out.println("\n\tThe Campaigner: Possibilities dance like fireflies in your eyes. You're an enthusiast of life, championing new ideas and inspiring others to embrace their dreams. With an infectious optimism and boundless creativity, you paint the world with bright colors and spark revolutions of the heart. (Think Robin Williams spreading laughter and inspiration, igniting passion in those around him.)");
+            System.out.println("\nDid you know?\n\t - Campaigners are independent and creative, always on the lookout for the magic and meaning in everyday life.");
+            System.out.println("\nCampaigners You May Know:\n\t o Spider Man\n\t o Willy Wonka\n\t o Ellen DeGeneres");
+
         }
         else if (personalityType.equals("ENTP"))
         {
-            // Similar code for ENTP
+            System.out.println("\"Follow the path of the unsafe, independent thinker.Expose your ideas to the dangers of controversy.\"\n\t\t\t - Thomas J. Watson.");
+            System.out.println("\n\tThe Debater: Your mind is a playground of ideas, where intellectual sparks fly and wit ignites laughter. You love a good debate, dissecting arguments with sharp logic and playful sarcasm. But beneath the playful banter lies a thirst for knowledge and understanding, driving you to explore every side of every issue. (Think Tyrion Lannister from Game of Thrones, holding his own in witty wordplay and intellectual challenges.)");
+            System.out.println("\nDid you know?\n\t - Many Debaters find that a more compassionate approach is worth exploring as they strive to build solid relationships.");
+            System.out.println("\nDebaters You May Know:\n\t o Thomas Edison\n\t o Captain Jack Sparrow\n\t o The Joker - Batman");
         }
         else if (personalityType.equals("ESTJ"))
         {
-            // Similar code for ESTJ
+            System.out.println("\"Good order is the foundation of all things.\"\n\t\t\t - Edmond Burke.");
+            System.out.println("\n\t The Executive: Efficiency is your mantra, organization your weapon. You lead with decisiveness and drive, navigating challenges with a clear vision and a focused path. Rules and structure provide the framework for your world, ensuring progress and achievement in everything you set your mind to. (Think Margaret Thatcher confidently leading her country, leaving a legacy of order and progress.)");
+            System.out.println("\nDid you know?\n\t - Executives are classic images of the model citizen: they help their neighbors, uphold the law, and try to make sure that everyone participates in the communities and organizations they hold so dear.");
+            System.out.println("\nExecutives You May Know:\n\t o Judge Judy\n\t o John D. Rockefeller\n\t o Claire Dunphy - Modern Family");
         }
         else if (personalityType.equals("ESFJ"))
         {
-            // Similar code for ESFJ
+            System.out.println("\"Encourage, lift, and strengthen one another. For the positive energy spread to one will be felt by us all.\"\n\t\t\t - Deborah Day.");
+            System.out.println("\n\t The Consul: Warmth and empathy are your guiding stars. You nurture those around you, creating a haven of comfort and support. Traditions and community hold deep meaning, as you weave connections and bring people together, leaving a trail of kindness and belonging in your wake. (Think Florence Nightingale tending to the wounded with compassion, embodying the spirit of care and nurturing.)");
+            System.out.println("\nDid you know?\n\t - Consuls rarely miss a birthday or holiday. Devoted to their relationships, they commit even the smallest details of their friends\' and loved ones\' lives to memory.");
+            System.out.println("\n You May Know:\n\t o Taylor Swift\n\t o Bill Clinton\n\t o Monica Geller - Friends");
         }
         else if (personalityType.equals("ENFJ"))
         {
-            // Similar code for ENFJ
+            System.out.println("\"When the whole world is silent, even one voice becomes powerful.\"\n\t\t\t - Malala Yousafzai.");
+            System.out.println("\n\t The Protagonist: Inspiration lives in your eyes, charisma flows in your words. You see the potential within everyone and dedicate yourself to guiding them towards their dreams. With unwavering enthusiasm and boundless faith in humanity, you rally others to make the world a better place, leaving a legacy of hope and progress in your wake. (Think Nelson Mandela motivating a nation, uniting hearts and minds toward a shared vision.)");
+            System.out.println("\nDid you know?\n\t - Changing people\'s minds is no easy task – but if anyone can do it, it\'s Protagonists.");
+            System.out.println("\n You May Know:\n\t o Barack Obama\n\t o Oprah Winfrey\n\t o Jennifer Lawrence");
         }
         else if (personalityType.equals("ENTJ"))
         {
-            // Similar code for ENTJ
+            System.out.println("\"Your time is limited, so don\'t waste it living someone else\'s life.\"\n\t\t\t - Steve Jobs.");
+            System.out.println("\n\t The Commander: Ambition defines your path, vision fuels your fire. You are a force of nature, strategizing and executing with masterful precision. Your sharp intellect and unwavering determination steer the course towards your goals, leaving a lasting impact on the world around you. (Think Captain Picard boldly leading the Starship Enterprise, charting a course through uncharted territory with calculated vision and decisive action.)");
+            System.out.println("\nDid you know?\n\t - The underlying thought running through the Commander mind might be something like 'I don\'t care if you call me an insensitive sloth, as long as I remain an efficient sloth.'");
+            System.out.println("\n You May Know:\n\t o Doctor Strange\n\t o Steve Jobs\n\t o Gordon Ramsey");
         }
         else
         {
@@ -244,4 +269,31 @@ class BinaryTree
         }
         System.out.println("\nLearn more about your type and traits in our Personality Types Section!");
     }
+
+    void printResult(BinaryTree[] treeArray, char[][] attribute) {
+        String descriptionID = "";
+        char attr;
+        System.out.print("You are an '");
+        for (int i = 0; i < 5; i++) {
+            if (i == 4) {
+                System.out.print("-");
+            }
+            attr = treeArray[i].getPersonalityType(treeArray[i].getLeft(), treeArray[i].getRight(), attribute[i]);
+            System.out.print(attr);
+            if (i != 4) {
+                descriptionID += attr;
+            }
+        }
+        System.out.println("'\n\n\n");
+
+        for (int i = 0; i < 5; i++)
+        {
+            treeArray[i].displayProgressBar(treeArray[i].getLeft(), treeArray[i].getRight(), attribute[i]);
+            System.out.println();
+        }
+        matchPersonalityType(descriptionID);
+
+        //add system pause
+    }
+
 }
