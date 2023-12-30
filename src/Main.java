@@ -1,10 +1,10 @@
+package src;
 import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        setCustomWindowSize();
         String[] quality = {"Introversion (I) / Extroversion (E)", "Sensing (S) / Intuition (N)", "Thinking (T) / Feeling (F)", "Judging (J) / Perceiving (P)", "Assertive (-A) / Turbulent (-T)"};
         char[][] attribute = {{'I', 'E'}, {'S', 'N'}, {'T', 'F'}, {'J', 'P'}, {'A', 'T'}};
         String[][] question =
@@ -140,7 +140,7 @@ public class Main
     private static void systemPause()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Press Enter to Continue..")
+        System.out.println("Press Enter to Continue..");
         scanner.nextLine();
         // Waits for the user to press Enter
     }
