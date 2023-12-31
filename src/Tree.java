@@ -1,6 +1,5 @@
-package src;
-
 import java.util.Scanner;
+
 class Tree
 {
     String data;
@@ -85,6 +84,8 @@ class BinaryTree
             {
                 System.out.println("Invalid input; Please enter a number (1 or 2).");
                 scanner.next();
+                System.out.println(current.data);
+                System.out.print("Enter your choice (1/2): ");
             }
             choice = scanner.nextInt();
             System.out.println();

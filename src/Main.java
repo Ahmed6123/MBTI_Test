@@ -1,13 +1,6 @@
-package src;
-
 import java.util.Scanner;
 public class Main
 {
-    //static String whiteColorCode = "\u001B[97m";
-    //static String redColorCode = "\u001B[31m";
-    //static String mintColorCode = "\u001B[38;5;85m";
-    //static String partyEmoji = "\uD83C\uDF89"; //🎉
-
     public static void main(String[] args)
     {
         //String[] quality = {"Introversion (I) / Extroversion (E)", "Sensing (S) / Intuition (N)", "Thinking (T) / Feeling (F)", "Judging (J) / Perceiving (P)", "Assertive (-A) / Turbulent (-T)"};
@@ -82,8 +75,19 @@ public class Main
             System.out.println("[4]: Personality Types");
             System.out.println("[5]: Exit");
             System.out.print("Choice: ");
-
             Scanner scanner = new Scanner(System.in);
+            while (!scanner.hasNextInt())
+            {
+                System.out.println(" ");
+                System.out.println("Invalid Choice; Please enter a valid option (1, 2, 3, 4, or 5).");
+                scanner.next(); // Consume the invalid input
+                System.out.println("\n[1]: Take The Test");
+                System.out.println("[2]: View Results");
+                System.out.println("[3]: About The Test");
+                System.out.println("[4]: Personality Types");
+                System.out.println("[5]: Exit");
+                System.out.print("Choice: ");
+            }
             choice = scanner.nextInt();
             System.out.println(" ");
             //clearScreen();
@@ -131,11 +135,9 @@ public class Main
                     break;
 
                 default:
-                    System.out.println("Invalid choice; Please enter a valid option.");
-                    systemPause();
+                    System.out.println("Invalid Choice; Please enter a valid option (1, 2, 3, 4, or 5).");
                     break;
             }
-            clearScreen();
         } while (choice != 5);
     }
 
