@@ -1,11 +1,16 @@
 package src;
-import java.util.Scanner;
 
+import java.util.Scanner;
 public class Main
 {
+    //static String whiteColorCode = "\u001B[97m";
+    //static String redColorCode = "\u001B[31m";
+    //static String mintColorCode = "\u001B[38;5;85m";
+    //static String partyEmoji = "\uD83C\uDF89"; //🎉
+
     public static void main(String[] args)
     {
-        String[] quality = {"Introversion (I) / Extroversion (E)", "Sensing (S) / Intuition (N)", "Thinking (T) / Feeling (F)", "Judging (J) / Perceiving (P)", "Assertive (-A) / Turbulent (-T)"};
+        //String[] quality = {"Introversion (I) / Extroversion (E)", "Sensing (S) / Intuition (N)", "Thinking (T) / Feeling (F)", "Judging (J) / Perceiving (P)", "Assertive (-A) / Turbulent (-T)"};
         char[][] attribute = {{'I', 'E'}, {'S', 'N'}, {'T', 'F'}, {'J', 'P'}, {'A', 'T'}};
         String[][] question =
                 {
@@ -61,18 +66,17 @@ public class Main
         BinaryTree natureTree = new BinaryTree();
         BinaryTree tacticTree = new BinaryTree();
         BinaryTree identityTree = new BinaryTree();
-        Node energyTreeRoot = null, mindTreeRoot = null, natureTreeRoot = null, tacticTreeRoot = null, identityTreeRoot = null;
+        Tree energyTreeRoot = null, mindTreeRoot = null, natureTreeRoot = null, tacticTreeRoot = null, identityTreeRoot = null;
 
         BinaryTree[] treeArray = {energyTree, mindTree, natureTree, tacticTree, identityTree};
-        Node[] rootsArray = {energyTreeRoot, mindTreeRoot, natureTreeRoot, tacticTreeRoot, identityTreeRoot};
+        Tree[] rootsArray = {energyTreeRoot, mindTreeRoot, natureTreeRoot, tacticTreeRoot, identityTreeRoot};
         boolean testTaken = false;
         int choice;
 
+        System.out.println("\n\t Welcome to the Myers-Briggs Type Indicator! ");
         do
         {
-            clearScreen();
-            System.out.println("- Welcome to the Myers-Briggs Type Indicator! -");
-            System.out.println("[1]: Take The Test");
+            System.out.println("\n[1]: Take The Test");
             System.out.println("[2]: View Results");
             System.out.println("[3]: About The Test");
             System.out.println("[4]: Personality Types");
@@ -81,7 +85,8 @@ public class Main
 
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
-            clearScreen();
+            System.out.println(" ");
+            //clearScreen();
 
             switch (choice)
             {
@@ -92,8 +97,9 @@ public class Main
                         treeArray[i].setCounters();
                         treeArray[i].setQuestionsHelper(rootsArray[i], question[i], 1);
                         treeArray[i].traverseTreeBasedOnInput(rootsArray[i]);
+                        //clearScreen();
                     }
-                    printResult(treeArray, attribute);
+                    energyTree.printResult(treeArray, attribute);
                     testTaken = true;
                     break;
 
@@ -106,7 +112,7 @@ public class Main
                     }
                     else
                     {
-                        printResult(treeArray, attribute);
+                        energyTree.printResult(treeArray, attribute);
                     }
                     break;
 
@@ -116,7 +122,8 @@ public class Main
                     break;
 
                 case 4:
-                    // Add functionality for Personality Types
+                    energyTree.printPersonalityTypes();
+                    systemPause();
                     break;
 
                 case 5:
@@ -128,13 +135,16 @@ public class Main
                     systemPause();
                     break;
             }
+            clearScreen();
         } while (choice != 5);
     }
 
     private static void clearScreen()
     {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        for (int i = 0; i < 20; i++)
+        {
+            System.out.println(" ");
+        }
     }
 
     private static void systemPause()
